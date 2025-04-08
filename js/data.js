@@ -171,13 +171,9 @@ function startCountdown(date, dayOffName) {
 
    let timer;
 
-   // console.log(`${date} - ${targetDate}`);
-
    function updateCountdown() {
       const now = new Date();
       const distance = targetDate - now;
-
-      // console.log(now);
 
       if (distance <= 0) {
          clearInterval(timer);

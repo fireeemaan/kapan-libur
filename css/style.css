@@ -146,11 +146,13 @@
 }
 
 .form-title {
+   text-align: center;
    font-size: 1.8rem;
    font-weight: 700;
 }
 
 .form-subtitle {
+   text-align: center;
    font-size: 1rem;
    font-weight: 500;
    color: #dca06d;
