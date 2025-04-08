@@ -1,0 +1,179 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: "Inter", sans-serif;
+}
+
+.countdown-container {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   width: 100%;
+   height: 100vh;
+   background: radial-gradient(
+      circle,
+      rgba(33, 15, 55, 1) 0%,
+      rgba(10, 4, 20, 1) 100%
+   );
+}
+
+.countdown-container h1,
+#countdown {
+   color: #dca06d;
+}
+
+.kapan-libur-panjang {
+   font-size: 1.8rem;
+   font-weight: 500;
+}
+
+.dayoff-name {
+   color: #f1c707 !important;
+   margin-top: 1rem;
+   margin-bottom: 0.5rem;
+   font-size: 3.8rem;
+   font-weight: 700;
+}
+
+.dayoff-date {
+   color: #ffffff !important;
+   font-size: 1.6rem;
+   font-weight: 500;
+}
+
+#countdown {
+   font-size: 4.8rem;
+   font-weight: 600;
+   border: 7px solid #a55b4b;
+   border-radius: 1.8rem;
+   padding: 8px 20px;
+   margin-top: 2rem;
+}
+
+#btn-remind-main {
+   font-size: 1.3rem;
+   font-weight: 600;
+   color: #dca06d;
+   background: #4f1c51;
+   border: 0px;
+   padding: 1rem 6rem;
+   border-radius: 0.5rem;
+   margin-top: 1rem;
+   cursor: pointer;
+}
+
+#btn-remind-main:hover {
+   background: #dca06d;
+   color: #4f1c51;
+   transition: all 0.3s ease-in-out;
+}
+
+.form-background {
+   display: none;
+   justify-content: center;
+   align-items: center;
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   background-color: rgba(0, 0, 0, 0.521);
+   backdrop-filter: blur(1.5px);
+   overflow: hidden;
+   animation: fade-in 0.3s cubic-bezier(0.17, 0.67, 0.83, 0.67) forwards;
+}
+
+.form-container {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   gap: 0.5rem;
+   align-items: center;
+   position: absolute;
+   /* transform: translateY(100vh); */
+   padding: 1rem 2rem 1rem 2rem;
+   background: #210f37;
+   border-radius: 8px;
+   border: 1px solid #ffffff18;
+}
+
+@keyframes fade-in {
+   0% {
+      opacity: 0;
+   }
+   100% {
+      opacity: 1;
+   }
+}
+
+@keyframes fade-out {
+   0% {
+      opacity: 1;
+   }
+   100% {
+      opacity: 0;
+   }
+}
+
+.animate-fade-in {
+   animation: fade-in 0.3s cubic-bezier(0.17, 0.67, 0.83, 0.67) forwards;
+}
+
+.animate-fade-out {
+   animation: fade-out 0.3s cubic-bezier(0.17, 0.67, 0.83, 0.67) forwards;
+}
+
+.form-header {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   margin-bottom: 0.8rem;
+}
+
+.form-title {
+   font-size: 1.8rem;
+   font-weight: 700;
+}
+
+.form-subtitle {
+   font-size: 1rem;
+   font-weight: 500;
+   color: #dca06d;
+}
+
+#email {
+   background-color: #2d154b;
+   border-radius: 8px;
+   border: 0px;
+   padding: 0.8rem 1.3rem 0.8rem 1.3rem;
+}
+
+#btn-submit {
+   width: 100%;
+   padding: 0.4rem 1.3rem 0.4rem 1.3rem;
+   font-size: 1rem;
+   font-weight: 600;
+   border-radius: 8px;
+   border: 0px;
+   margin-top: 0.5rem;
+   background-color: #4508b6;
+   color: #ffffffa9;
+   cursor: pointer;
+}
+
+#btn-submit:hover {
+   background-color: #5409e0;
+   transition: all 0.3s ease-in-out;
+}
+
+#btn-close-form {
+   display: flex;
+   width: 100%;
+   justify-content: flex-end;
+   margin-right: -2rem;
+   margin-top: 0.2rem;
+   cursor: pointer;
+   filter: invert(1);
+   opacity: 0.5;
+}
