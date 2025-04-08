@@ -87,6 +87,7 @@
 }
 
 .form-container {
+   width: 22rem;
    display: flex;
    flex-direction: column;
    justify-content: center;
@@ -98,6 +99,16 @@
    background: #210f37;
    border-radius: 8px;
    border: 1px solid #ffffff18;
+}
+
+.form-desc {
+   text-align: left;
+   width: 100%;
+   color: rgba(255, 255, 255, 0.295);
+   font-weight: 300;
+   font-size: 0.8rem;
+   margin-top: 5px;
+   /* background-color: #2d154b; */
 }
 
 @keyframes fade-in {
@@ -146,6 +157,7 @@
 }
 
 #email {
+   width: 100%;
    background-color: #2d154b;
    border-radius: 8px;
    border: 0px;
@@ -309,4 +321,22 @@
 #btn-remind-card:hover {
    background-color: #5409e0;
    transition: all 0.3s ease-in-out;
+}
+
+.footer-container {
+   color: rgba(255, 255, 255, 0.473);
+   display: flex;
+   width: 100%;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   background-color: #0f071a;
+   padding-bottom: 3rem;
+}
+
+.footer-text {
+   font-size: 1.4rem;
+   font-weight: 400;
+
+   color: #ffffff63;
 }
