@@ -8,12 +8,16 @@ const dayoffName = $("#dayoff-name");
 const formSubtitle = $("#form-subtitle");
 
 function showForm(e) {
-   const trigger = $(e.currentTarget).attr("id");
+   const $trigger = $(e.currentTarget);
 
-   console.log(trigger);
-
-   if (trigger === "btn-remind-main") {
+   if ($trigger.is("#btn-remind-main")) {
       formSubtitle.text(`"${dayoffName.text()}"`);
+   } else if ($trigger.hasClass("btn-remind-card")) {
+      const cardTitle = $(e.currentTarget)
+         .closest(".card")
+         .find(".card-title")
+         .text();
+      formSubtitle.text(`"${cardTitle}"`);
    }
 
    form
@@ -66,3 +70,5 @@ function showAlert(type, message) {
       }, 500);
    }, 2000);
 }
+
+$(document).on("click", ".btn-remind-card", showForm);

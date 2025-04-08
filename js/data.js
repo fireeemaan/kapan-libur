@@ -34,14 +34,55 @@ function getData(callback) {
 
 function displayData() {
    getData((data) => {
+      console.log(data);
       const upcomingDayOff = findUpcomingDayOff(data);
+      const allUpcoming = findAllUpcomingDayOff(data);
       // console.log(upcomingDayOff);
       $("#dayoff-name").text(upcomingDayOff.keterangan);
       $("#dayoff-date").text(
          `Pada ${formatDateToString(upcomingDayOff.duration.startDate)}`
       );
       startCountdown(upcomingDayOff.duration.startDate);
+
+      createListOfDayOff(allUpcoming);
    });
+}
+
+function createListOfDayOff(data) {
+   const listContainer = $("#dayoff-list-container");
+
+   data.forEach((item) => {
+      const startDate = formatDateToString(item.duration.startDate);
+      const endDate = formatDateToString(item.duration.endDate);
+
+      const date =
+         startDate === endDate ? startDate : `${startDate} - ${endDate}`;
+
+      const card = $("<div>", { class: "card" }).html(
+         ` <img
+                  src="https://placehold.co/600x400"
+                  alt=""
+                  class="img-dayoff"
+               />
+               <div class="card-content">
+                  <div>
+                     <h1 class="card-title">${item.keterangan}</h1>
+                     <h1 class="card-date">${date}</h1>
+                  </div>
+               </div>
+               <button class="btn-remind-card">Ingatkan Saya</button>`
+      );
+      listContainer.append(card);
+   });
+}
+
+function findAllUpcomingDayOff(data) {
+   const today = new Date();
+   today.setHours(0, 0, 0, 0);
+
+   return (
+      data.filter((item) => new Date(item.duration.startDate) >= today) || null
+   );
 }
 
 function findUpcomingDayOff(data) {
