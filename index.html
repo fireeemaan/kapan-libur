@@ -15,7 +15,7 @@
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
       <link
-         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+         href="https://fonts.googleapis.com/css2?family=Azeret+Mono:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
          rel="stylesheet"
       />
       <link
@@ -27,12 +27,15 @@
       />
    </head>
    <body>
-      <div class="alert"></div>
+      <div class="alert-container" id="alert-container">
+         <!-- <div class="alert error">Lorem Ipsum Dolor Sit Amet</div> -->
+         <!-- <div class="alert success">Lorem Ipsum Dolor Sit Amet</div> -->
+      </div>
       <div class="countdown-container">
-         <h1 class="kapan-libur-panjang">Kapan Libur Panjang Selanjutnya?</h1>
-         <h1 class="dayoff-name" id="dayoff-name">Libur Lorem Ipsum</h1>
-         <h1 class="dayoff-date">Pada Tanggal 25 25 2025</h1>
-         <div id="countdown">00 : 00 : 00 : 00</div>
+         <h1 class="kapan-libur-panjang">Kapan Liburan Selanjutnya?</h1>
+         <h1 class="dayoff-name" id="dayoff-name">Loading...</h1>
+         <h1 class="dayoff-date" id="dayoff-date">Loading...</h1>
+         <div id="countdown">00:00:00:00</div>
          <button class="btn" id="btn-remind-main">Ingatkan Saya</button>
 
          <div class="form-background" id="form-bg">

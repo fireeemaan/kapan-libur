@@ -34,8 +34,23 @@ function getData(callback) {
 
 function displayData() {
    getData((data) => {
-      console.log(data);
+      const upcomingDayOff = findUpcomingDayOff(data);
+      // console.log(upcomingDayOff);
+      $("#dayoff-name").text(upcomingDayOff.keterangan);
+      $("#dayoff-date").text(
+         `Pada ${formatDateToString(upcomingDayOff.duration.startDate)}`
+      );
+      startCountdown(upcomingDayOff.duration.startDate);
    });
+}
+
+function findUpcomingDayOff(data) {
+   const today = new Date();
+   today.setHours(0, 0, 0, 0);
+
+   return (
+      data.find((item) => new Date(item.duration.startDate) >= today) || null
+   );
 }
 
 // function displayData() {
@@ -93,6 +108,15 @@ function displayData() {
 //    }
 // }
 
+function formatDateToString(date) {
+   const dateStr = new Date(date);
+   return dateStr.toLocaleDateString("id-ID", {
+      day: "numeric",
+      month: "short",
+      year: "numeric",
+   });
+}
+
 function formatDate(date) {
    const [year, month, day] = date.split("-");
    const formattedDay = day.padStart(2, "0");
@@ -126,8 +150,12 @@ function startCountdown(date, dayOffName) {
       const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
+      const padNum = (num) => num.toString().padStart(2, "0");
+
       cdEl.text(
-         `${days}d ${hours}h ${minutes}m ${seconds}s Menuju ${dayOffName}`
+         `${padNum(days)}:${padNum(hours)}:${padNum(minutes)}:${padNum(
+            seconds
+         )}`
       );
    }
    updateCountdown();
